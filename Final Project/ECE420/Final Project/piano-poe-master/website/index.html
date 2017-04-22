@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PianoBot</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/flexslider.css" rel="stylesheet" >
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/queries.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+      </head>
+      <body id="top">
+        <header id="home">
+          <nav>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                  <nav class="pull">
+                    <ul class="top-nav">
+                      <li><a href="#intro">Introduction <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="#features">Features <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="mechanical.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mechanical <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="electrical.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Electrical <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="software.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Software <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="#bom">Bill of Materials <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                      <li><a href="#team">Team <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <section class="hero" id="hero">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 text-right navicon">
+                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center inner">
+                  <h1 class="animated fadeInDown">Piano<span>Bot</span></h1>
+                  <p class="animated fadeInUp delay-05s">Principles of Engineering project, Olin College, Fall 2014</p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </header>
+        <section class="intro text-center section-padding" id="intro">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 wp1">
+                <h1 class="arrow">The Design, Manufacturing, and Implementation of a Piano-Playing Robot</h1>
+                <p>Have you ever wanted live piano music, without the hassle of learning how to play a piano?  PianoBot is the solution - 
+                a portable system that can be installed in front of any piano or keyboard to play music!</p>
+                <p>PianoBot is an autonomous system that takes a sheet music or MIDI sound file input and uses that to play the song using a series of hand-inspired actuators to depress the keys.  Additionally, tt has been designed to sit in front of any keyboard. These two design choices make it a robust system that can play
+                any variety of songs available.</p>
+                <p>Our goals for this project were as follows:</p>
+                  <li>To play at least one octave of music from a MIDI file</li>
+                  <li>To do so in a way that does not damage the keyboard we are using</li>
+                <p>Stretch goals for the project included:</p>
+                  <li>To play sharps and flats</li>
+                  <li>To play multiple octaves</li>
+                  <li>To play multiple notes at once</li>
+                  <li>To take in PDF sheet music as an input and read using computer vision</li>
+                <p>This project was an eight-week undertaking for the Olin College Principles of Engineering (PoE) class in Fall 2014.  PoE seeks to teach
+                students to integrate analysis, qualitative design, quantitative optimization, experiments, and simulations to improve their ability to engineer real systems, through a significant project experience designing and building a mechatronic system with nontrivial electrical, mechanical, and
+                software components.</p>
+
+                <img src="./img/poe3-n.png">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="swag text-center" id="features">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+
+                <h1>Meet the PianoBot<span>subsystem detail</span></h1>
+                <a href="#features2" class="down-arrow-btn"><i class="fa fa-chevron-down"></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="intro text-center section-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 wp1">
+                <h2>The Overall System</h2>
+                <img src="./img/SystemOverview.png">
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="portfolio text-center section-padding" id="features2">
+          <div class="container">
+            <div class="row">
+              <div id="portfolioSlider">
+                <ul class="slides">
+                  <li>
+                    <div class="col-md-4 wp4">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="img/ode_to_joy.png" alt="Portfolio Item">
+                          <div class="overlay">
+                            <a href="./software.html" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                            <a class="close-overlay hidden">x</a>
+                          </div>
+                        </div>
+                      </div>
+                      <h2><i class="fa fa-code"></i> Software/Firmware Systems</h2>
+                      <p>The software system consists of two main parts: reading/sending notes in Python, and Arduino 
+                      code to actuate the servos and play the notes.</p>
+                    </div>
+                    <div class="col-md-4 wp4 delay-05s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="img/ArduinoPic.jpg" alt="Portfolio Item">
+                          <div class="overlay">
+                            <a href="./electrical.html" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                            <a class="close-overlay hidden">x</a>
+                          </div>
+                        </div>
+                      </div>
+                      <h2><i class="fa fa-plug"></i> Electrical Components</h2>
+                      <p>We use an Arduino Mega to interface with 36 servos to play three octaves of keys, via a carefully designed voltage regulator circuit.
+                      </p>
+                    </div>
+                    <div class="col-md-4 wp4 delay-1s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="img/portfolio-01.jpg" alt="Portfolio Item">
+                          <div class="overlay">
+                            <a href="./mechanical.html" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                            <a class="close-overlay hidden">x</a>
+                          </div>
+                        </div>
+                      </div>
+                      <h2><i class="fa fa-cogs"></i> Mechanical System</h2>
+                      <p>We designed and fabricated a customized stand to hold 36 servos and 
+                        mechanical fingers in place over the centers of the keys. </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <div class="ignite-cta text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <a href="https://github.com/sarahwalters/piano-poe" class="ignite-btn">Source on Github</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="text-center" id="bom">
+          <div class="container-fluid nopadding responsive-services3">
+            <div class="wrapper">
+              <div class="detailed2">
+                <img src="./img/bom2.png">
+              </div>
+              <div class="fluid-white2"></div>
+            </div>
+            <div class="container designs">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-0">
+                  <div id="servicesSlider2">
+                    <ul class="slides">
+                      <li>
+                        </br>
+                        </br>
+                        <h1 class="arrow">Bill of Materials</h1>
+                        <p>The materials shown to the right represent all the materials purchased or acquired
+                        during the process of creating the final prototype.  We used some scrap MDF, hot glue, and other
+                        temporary materials for incremental prototypes, which we spent no money on.</p>
+                        <p>We obtained the keyboard we used for testing and demo for free from a peer.  We did research and found that
+                        we could purchase similar keyboards on eBay for about $30.  That amount would increase our money spent to
+                        just barely over $250, the budget for this project.  We acquired the electrical components for free from the ECE stockroom.</p>
+                        <p>This budget sheet also does not include any communal materials, such as solder or jumper
+                        cables. It also does not detail the tools we used, including the laser cutter, 3D printer,
+                        band saw, drill press, soldering iron, and various hand tools.</p>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="team text-center section-padding" id="team">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">Meet the people behind the project</h1>
+                Meet the five students from Olin College class of 2017 who devoted a semester to designing and creating a piano-playing robot
+              </div>
+            </div>
+            <div class="row">
+              <div class="team-wrapper">
+                <div id="teamSlider">
+                  <ul class="slides">
+                    <li>
+                      <div class="col-md-4 wp5">
+                        <img src="img/lindsey3.png" alt="Team Member">
+                        <h2>Lindsey Andrade</h2>
+                        <p>Lindsey is a mechanical engineer who is a boss. She enjoys laser cutting and attaching things with hot glue. One day she dreams to use the PianoBot in space. </p>
+                        <!--<div class="social">
+                          <ul class="social-buttons">
+                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                          </ul>
+                        </div>-->
+                      </div>
+                      
+                      <div class="col-md-4 wp5 delay-02s">
+                        <img src="img/susie3.png" alt="Team Member">
+                        <h2>Susie Grimshaw</h2>
+                        <p>Susie is a design engineering student with a passion for engineering education. When she isn't working, you can find her playing music, spending time with friends, and dreaming about getting a puppy.</p>
+                      </div>
+                      <div class="col-md-4 wp5 delay-04s">
+                        <img src="img/anne2.png" alt="Team Member">
+                        <h2>Anne LoVerso</h2>
+                        <p>Anne is an engineering with computing student, passionate about education and curricular design, circus arts, and making the world a better place.  Maybe that better world involves piano-playing robots.</p>
+                      </br>
+                      </br>
+                      </br>  
+                      </div>
+                      <div class="col-md-4 wp5 delay-06s">
+                        <img src="img/lindseyv2.png" alt="Team Member">
+                        <h2>Lindsey Vanderlyn</h2>
+                        <p>Lindsey is an electrical and computer engineering student who loves to make things. In her free time (when she has it), she is doing homework because, let's be honest. Free time is a lie. </p>
+                        
+                      </div>
+                      <div class="col-md-4 wp5 delay-08s">
+                        <img src="img/sarah2.png" alt="Team Member">
+                        <h2>Sarah Walters</h2>
+                        <p>Sarah is a robotics engineering student who also happens to be a pianist and a violinist. If she's not engineering things or playing music, you'll probably find her reading sci-fi or fantasy or spending time with friends.</p>
+                        
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="legals">
+                  <li><a href="http://www.olin.edu">Olin College of Engineering</a></li>
+                  <li>Fall 2014</li>
+                </ul>
+              </div>
+              <div class="col-md-6 credit">
+                <p><a href="http://tympanus.net/codrops/2014/07/14/freebie-halcyon-days-one-page-website-template/">Template Credit</a></p>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/jquery.flexslider.js"></script>
+        <script src="js/modernizr.js"></script>
+      </body>
+    </html>

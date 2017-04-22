@@ -1,0 +1,253 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PianoBot - Software</title>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/flexslider.css" rel="stylesheet" >
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/queries.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+      </head>
+      <body id="top">
+        <header id="home">
+          
+         <section class="swag text-center" id="features">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <h1>Software/Firmware Systems</h1>
+                <a href="./index.html" class="down-arrow-btn"><i class="fa fa-chevron-left"></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        </header>
+        
+
+      
+        <section class="intro text-center section-padding" id="intro">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 wp1">
+                <h1 class="arrow">Overview</h1>
+                <p>We are able to process note input from either a MIDI file or PDF sheet music and translate it into servo commands.
+                We are able to read music in two ways primarily because we were unsure when scoping our project how long it would take
+                to develop accurate music recognition software. As a result, we started by reading MIDI files, which are simple
+                sequences of different types of events. Having robust music reading early on in the project allowed us to test our electrical 
+                and mechanical systems. In parallel, we developed optical music recognition software which finds notes in images of 
+                sheet music, identifies their names, characterizes their durations, and constructs a sequence of note events similar to a MIDI file. For a full list of external libraries we used, see <a href="https://github.com/sarahwalters/piano-poe">the readMe on our Github page</a>. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+
+
+        <section class="text-center" id="responsive">
+          <div class="container-fluid nopadding responsive-services3">
+            <div class="wrapper">
+              <div class="detailed">
+                <img src="./img/CodeSystemDiagram.png">
+              </div>
+              <div class="fluid-white"></div>
+            </div>
+            <div class="container designs">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-7">
+                  <div id="servicesSlider">
+                    <ul class="slides">
+                      <li>
+                        <h1 class="arrow">Python System Diagram</h1>
+                        <p>The diagram to the left depicts the two possible pipelines for converting music into sequences of notes: the
+                        MIDI file reading system and the optical music recognition software.</p>
+                        <p>A MIDI file is a format which contains musical information in the form of a sequence of note-on and note-off events. 
+                        We used a Python library to unpack the sequence of events.</p>
+                        <p>The optical music recognition uses computer vision via the OpenCV package for Python to find, identify, and characterize notes in a sheet of music.</p>
+                        <p>Once we have obtained a sequence of notes, we encode each distinct keyboard state as a
+                        binary string and store the time at which it should occur. Each bit of the string represents whether a specific key is depressed (1) or released (0). The Python system is then ready to transmit binary strings and times to the Arduino.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="text-center" id="responsive">
+          <div class="container-fluid nopadding responsive-services3">
+            <div class="wrapper">
+              <div class="detailed2">
+                <img src="./img/midi.png">
+              </div>
+              <div class="fluid-white2"></div>
+            </div>
+            <div class="container designs">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-0">
+                  <div id="servicesSlider2">
+                    <ul class="slides">
+                      <li>
+                        </br></br></br></br></br></br></br></br>
+                        <h1 class="arrow">MIDI File Reading</h1>
+                        <p>MIDI files are a type of music file comprised of events. In this section of code, we use an open-source Python-MIDI library to open the file, identify note-on and note-off events, gather together the ones which occur simultaneously, and recognize the pitches. At that point, we are able to construct binary keyboard states for transmission to the Arduino.</p>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="text-center" id="responsive">
+          <div class="container-fluid nopadding responsive-services3">
+            <div class="wrapper">
+              <div class="detailed">
+                <img src="./img/staff_lines.png">
+              </div>
+              <div class="fluid-white"></div>
+            </div>
+            <div class="container designs">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-7">
+                  <div id="servicesSlider">
+                    <ul class="slides">
+                      <li>
+                        <h1 class="arrow">Note Isolation Process</h1>
+                        <p>First, we convert a PDF of the sheet music into a PNG image file which OpenCV in Python is capable of reading.
+                        Next, we search through the entire image and use the HoughLines algorithm to find and save the y-location of
+                        every staff line within the image (shown as the thick horizontal lines to the left)</p>
+                        <p>Next, we split the image into several images, each representing a single line of music. In the process we destroy the staff lines, leaving only the notes behind.  Since we saved the staff line locations, we are still able to identify notes.</p>
+                        <img src="./img/single_line.png" width=500>
+                        <p>Next, we use a connectivity search to traverse a line of music column by column, checking if it contains any black
+                        pixels.  We crop out columns that contain black pixels and group them together as note objects.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="text-center" id="responsive">
+          <div class="container-fluid nopadding responsive-services3">
+            <div class="wrapper">
+              <div class="detailed2">
+                <img src="./img/software-process.png">
+              </div>
+              <div class="fluid-white2"></div>
+            </div>
+            <div class="container designs">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-0">
+                  <div id="servicesSlider2">
+                    <ul class="slides">
+                      <li>
+                        <h1 class="arrow">Note Characterization and Identification</h1>
+                        <p>After we have eliminated whitespace columns and grouped note objects, we split each note object image in half along the horizontal line which separate the treble clef staff from the bass clef staff.</p>
+                        <p>We then send each half through a mean-shift algorithm which locates the center of mass of black pixels in the image, which we consider to be the center of the note.  This algorithm checks if the center is black or white to distinguish between half and quarter notes, and checks for the existence of a stem to distinguish between whole and half notes.  If it detects more than one note in the image (in a group of eighth notes), it breaks them apart and locates each center individually.</p>
+                        <p>We compare the location of the identified center of the note to the locations of the staff lines, saved during the isolation process, to identify which line or space corresponds to the note's vertical position.  With this, we have obtained the note name (C5, E4, B3...) and characterized the duration (half, quarter, ...).</p>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="text-center" id="responsive">
+          <div class="container-fluid nopadding responsive-services3">
+            <div class="wrapper">
+              <div class="detailed">
+                <img src="./img/ArduinoDiagram.png">
+              </div>
+              <div class="fluid-white"></div>
+            </div>
+            <div class="container designs">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-7">
+                  <div>
+                    <ul class="slides">
+                      <li>
+                        <h1 class="arrow">Receiving and Playing Notes with Arduino</h1>
+                        <p>Once the Python environment has processed the note input, it sends a string representing a group of state/time pairs to the Arduino. The Arduino buffers the string until it receives an intermediate end character. When it receives the end character, it processes the string. Processing involves splitting each keyboard state and the corresponding time off, separating the keyboard state (a binary string) into byte-sized pieces and storing them to the EEPROM (the Arduino's byte memory), then pushing the associated time to a queue. The Arduino continues doing this until it receives the final end character, which indicates that Python is finished sending the entire song.
+                        </p>
+
+                        <p>Next, the Arduino transitions to the note playing state. First, it starts a clock so note timings will be consistent; then, it begins a loop that peeks at the next time in the queue until it is exceeded by the current time since start. At this point, it pops the time from the queue and reconstructs the corresponding keyboard state by retrieving bytes from the appropriate EEPROM addresses. It plays the keyboard state by looping through the string and positioning each servo accordingly. This process of checking and playing continues as long as there are still times left in the queue.</p>
+
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="text-center" id="responsive">
+          <div class="container-fluid nopadding responsive-services3">
+            <div class="wrapper">
+              <div class="detailed2">
+                <img src="./img/poe2-n.png">
+              </div>
+              <div class="fluid-white2"></div>
+            </div>
+            <div class="container designs">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-0">
+                  <div id="servicesSlider2">
+                    <ul class="slides">
+                      <li>
+                        <h1 class="arrow">Changes and Reflection</h1>
+                        <p>Overall, our project was well-scoped, especially for the strengths of our team.  The challenges we chose to embrace were primarily software-related, which matched the interests and skills of our team.  At the start of the project, we set a very realistic minimum software deliverable: we wanted to be able to use a MIDI file to control a single octave of notes. In addition, we set two stretch goals: more motors (from the software perspective, a trivial scaling problem) and the ability to use computer vision to read sheet music (a much more involved problem).</p>
+
+                        <p>Setting such a feasible minimum goal for the software system and breaking down the problem between multiple team members allowed us to be flexible. This became unexpectedly useful when we encountered the memory limit of our Arduino (and, subsequently, the request processing time involved in our serial communication) in an early version of the serial communication. These limitations forced us to rethink our infrastructure, which opened up several learning opportunities. Working with the memory limit and around the serial delay allowed us to explore in great depth the types of memory on an Arduino and the capabilities of each, and it prompted us to think about how to encode data compactly.</p>
+
+
+                        <p>We started out thinking about our system in the abstract, and as a result we built our software as several modular subsystems. This allowed us to move forward with the other subsystems individually, even when one took longer than expected. Thus, our goals remained largely the same through the project, with the minor change that at the end of the semester, we spent much of our time focusing on meeting our stretch goals.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        </br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+        <div class="ignite-cta text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <a href="https://github.com/sarahwalters/piano-poe" class="ignite-btn">Source on Github</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/jquery.flexslider.js"></script>
+        <script src="js/modernizr.js"></script>
+      </body>
+    </html>
